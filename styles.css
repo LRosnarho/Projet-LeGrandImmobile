@@ -1,0 +1,135 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'BBBBaskervvol-Base';
+    src: url('fonts/BBBBaskervvol-Base.ttf') format('truetype');
+}
+
+body {
+    font-family: 'BBBBaskervvol-Base', serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section pleine page avec image */
+.hero {
+    position: relative;
+    width: 100vw;   /* Prend toute la largeur de l'écran */
+    height: 100vh;  /* Prend toute la hauteur de l'écran */
+    overflow: hidden; /* Empêche l'image de déborder de l'écran */
+}
+
+.hero img {
+    position: absolute;
+    top: 20px; /* Ajoute un espace de 20px entre le haut de l'image et la bordure du conteneur */
+    left: 20px; /* Ajoute un espace de 20px à gauche */
+    width: calc(100% - 40px); /* Ajuste la largeur pour inclure les marges (20px à gauche + 20px à droite) */
+    height: calc(100% - 40px); /* Ajuste la hauteur pour inclure les marges (20px en haut + 20px en bas) */
+    object-fit: cover; /* Conserve les proportions de l'image tout en la redimensionnant */
+    z-index: -1; /* L'image reste en arrière-plan */
+}
+
+
+
+/* Contenu centré pour le texte */
+.content {
+    padding: 40px 20px;
+    max-width: 475px; /* Correspond à la largeur approximative d'une page A5 */
+    margin: 0 auto;
+    background: #fff;
+}
+
+.title h1 {
+text-align: center;
+margin-top: 50px;
+margin-bottom: 5px; 
+font-family: "Baskervvol Fondue", monospace; 
+font-size: 28pt;  
+font-weight: bold;
+}
+
+.title h2 {
+text-align: center;
+font-size: 16pt	;
+font-family: "Baskervvol Fondue", monospace; 
+font-style: italic; 
+font-weight:normal;
+margin-bottom: 30px
+}
+
+.content h3 { 
+text-align: left; 
+margin-top: 60px;
+font-family: "Baskervvol Base", monospace; 
+font-size: 16pt; 
+font-weight: bold 
+}
+		
+.content h4 {  
+text-align: justify; 
+margin-top: 40px; 
+margin-bottom: 10px;
+font-family: "Baskervvol Fondue", monospace;
+font-size: 13pt; 
+font-style: normal; 
+font-weight: bold ;
+}
+		
+.content p { 
+line-height: 1.5; 
+text-align: justify; 
+margin-bottom: 0.25cm; 
+font-family: "Baskervvol Fondue", monospace; 
+font-size: 12pt; 
+font-style: normal; 
+font-weight: normal 
+}
+
+	
+		
+em { font-style: italic }
+a:link { color: #000080; text-decoration: underline }
+
+
+/* En-tête qui apparaît en scrollant */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    opacity: 1;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.header-placeholder {
+    height: 0px; /* Hauteur pour éviter que le contenu ne bouge */
+}
+
+.sticky-header.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header-title {
+    font-size: 1rem;
+}
+
+.header-author {
+    font-size: 0.9rem;
+}
